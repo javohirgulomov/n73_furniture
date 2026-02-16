@@ -1,10 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <!--<![endif]-->
 <html lang="zxx">
-
 
 <!-- blog-detail10:38-->
 <head>
@@ -17,7 +17,6 @@
     <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
     <meta name="author" content="tivatheme">
 
-
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -25,18 +24,18 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="libs/nivo-slider/css/nivo-slider.css">
-    <link rel="stylesheet" href="libs/nivo-slider/css/animate.css">
-    <link rel="stylesheet" href="libs/nivo-slider/css/style.css">
-    <link rel="stylesheet" href="libs/font-material/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="libs/slider-range/css/jslider.css">
-    <link rel="stylesheet" href="libs/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/nivo-slider/css/nivo-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/nivo-slider/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/nivo-slider/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/font-material/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/slider-range/css/jslider.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/owl-carousel/assets/owl.carousel.min.css' %}">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/reponsive.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reponsive.css' %}">
 </head>
 
 <body id="blog-detail" class="blog">
@@ -53,8 +52,8 @@
 
                 <!-- logo -->
                 <div class="mobile-logo">
-                    <a href="home.html">
-                        <img class="logo-mobile img-fluid" src="img/home/logo-mobie.png" alt="Prestashop_Furnitica">
+                    <a href="{% url 'home' %}">
+                        <img class="logo-mobile img-fluid" src="{% static 'img/home/logo-mobie.png' %}" alt="Prestashop_Furnitica">
                     </a>
                 </div>
 
@@ -67,8 +66,7 @@
             <!-- search -->
             <div id="mobile_search" class="d-flex">
                 <div id="mobile_search_content">
-                    <form method="get" action="#">
-
+                    <form method="get" action="{% url 'search' %}">
                         <input type="text" name="s" value="" placeholder="Search">
                         <button type="submit">
                             <i class="fa fa-search"></i>
@@ -87,13 +85,13 @@
                                     <tbody>
                                         <tr>
                                             <td class="product-image">
-                                                <a href="product-detail.html">
-                                                    <img src="img/product/5.jpg" alt="Product">
+                                                <a href="{% url 'product_detail' %}">
+                                                    <img src="{% static 'img/product/5.jpg' %}" alt="Product">
                                                 </a>
                                             </td>
                                             <td>
                                                 <div class="product-name">
-                                                    <a href="product-detail.html">Organic Strawberry Fruits</a>
+                                                    <a href="{% url 'product_detail' %}">Organic Strawberry Fruits</a>
                                                 </div>
                                                 <div>
                                                     2 x
@@ -101,7 +99,7 @@
                                                 </div>
                                             </td>
                                             <td class="action">
-                                                <a class="remove" href="#">
+                                                <a class="remove" href="javascript:void(0);">
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </a>
                                             </td>
@@ -114,8 +112,8 @@
                                         <tr>
                                             <td colspan="3" class="d-flex justify-content-center">
                                                 <div class="cart-button">
-                                                    <a href="cart.html" title="View Cart">View Cart</a>
-                                                    <a href="checkout.html" title="Checkout">Checkout</a>
+                                                    <a href="{% url 'cart' %}" title="View Cart">View Cart</a>
+                                                    <a href="{% url 'checkout' %}" title="Checkout">Checkout</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -135,8 +133,8 @@
                     <!-- logo -->
                     <div class="col-sm-2 col-md-2 d-flex align-items-center">
                         <div id="logo">
-                            <a href="home.html">
-                                <img src="img/home/logo.png" alt="logo" class="img-fluid">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'img/home/logo.png' %}" alt="logo" class="img-fluid">
                             </a>
                         </div>
                     </div>
@@ -146,54 +144,54 @@
                         <div class="menu navbar collapse navbar-collapse">
                             <ul class="menu-top navbar-nav">
                                 <li>
-                                    <a href="#" class="parent">Home</a>
+                                    <a href="javascript:void(0);" class="parent">Home</a>
                                     <div class="dropdown-menu">
                                         <ul>
                                             <li class="item">
-                                                <a href="home.html" title="Home Page 1">Home Page 1</a>
+                                                <a href="{% url 'home' %}" title="Home Page 1">Home Page 1</a>
                                             </li>
                                             <li class="item">
-                                                <a href="home2.html" title="Home Page 2">Home Page 2</a>
+                                                <a href="{% url 'home2' %}" title="Home Page 2">Home Page 2</a>
                                             </li>
                                             <li class="item">
-                                                <a href="home3.html" title="Home Page 3">Home Page 3</a>
+                                                <a href="{% url 'home3' %}" title="Home Page 3">Home Page 3</a>
                                             </li>
                                             <li class="item">
-                                                <a href="home4.html" title="Home Page 4">Home Page 4</a>
+                                                <a href="{% url 'home4' %}" title="Home Page 4">Home Page 4</a>
                                             </li>
                                             <li class="item">
-                                                <a href="home5.html" title="Home Page 5">Home Page 5</a>
+                                                <a href="{% url 'home5' %}" title="Home Page 5">Home Page 5</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="nav-link">
-                                    <a href="#" class="parent">Blog</a>
+                                    <a href="javascript:void(0);" class="parent">Blog</a>
                                     <div class="dropdown-menu">
                                         <ul>
                                             <li class="item">
-                                                <a href="blogs-list.html" title="Blog List (Sidebar Left)">Blog List (Sidebar Left)</a>
+                                                <a href="{% url 'blogs-list' %}" title="Blog List (Sidebar Left)">Blog List (Sidebar Left)</a>
                                             </li>
                                             <li class="item">
-                                                <a href="blog-list-sidebar-left2.html" title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
+                                                <a href="{% url 'blog-list-sidebar-left2' %}" title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
                                             </li>
                                             <li class="item">
-                                                <a href="blog-list-sidebar-right.html" title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
+                                                <a href="{% url 'blog-list-sidebar-right' %}" title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
                                             </li>
                                             <li class="item">
-                                                <a href="blog-list-no-sidebar.html" title="Blog List (No Sidebar)">Blog List (No Sidebar)</a>
+                                                <a href="{% url 'blog-list-no-sidebar' %}" title="Blog List (No Sidebar)">Blog List (No Sidebar)</a>
                                             </li>
                                             <li class="item">
-                                                <a href="blog-grid-no-sidebar.html" title="Blog Grid (No Sidebar)">Blog Grid (No Sidebar)</a>
+                                                <a href="{% url 'blog-grid-no-sidebar' %}" title="Blog Grid (No Sidebar)">Blog Grid (No Sidebar)</a>
                                             </li>
                                             <li class="item">
-                                                <a href="blog-detail.html" title="Blog Detail">Blog Detail</a>
+                                                <a href="{% url 'blog-detail' %}" title="Blog Detail">Blog Detail</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="parent">Page</a>
+                                    <a href="javascript:void(0);" class="parent">Page</a>
                                     <div class="dropdown-menu drop-tab">
                                         <ul>
                                             <li class="item container group">
@@ -204,13 +202,13 @@
                                                             <div class="menu-content">
                                                                 <ul class="col">
                                                                     <li>
-                                                                        <a href="products-list.html">Product Grid (Sidebar Left)</a>
+                                                                        <a href="{% url 'products-list' %}">Product Grid (Sidebar Left)</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="product-grid-sidebar-right.html">Product Grid (Sidebar Right)</a>
+                                                                        <a href="{% url 'product-grid-sidebar-right' %}">Product Grid (Sidebar Right)</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="product-list-sidebar-left.html">Product List (Sidebar left) </a>
+                                                                        <a href="{% url 'product-list-sidebar-left' %}">Product List (Sidebar left) </a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -220,10 +218,10 @@
                                                             <div class="menu-content">
                                                                 <ul>
                                                                     <li>
-                                                                        <a href="product-detail.html">Product Detail (Sidebar Left)</a>
+                                                                        <a href="{% url 'product-detail' %}">Product Detail (Sidebar Left)</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="#">Product Detail (Sidebar Right)</a>
+                                                                        <a href="javascript:void(0);">Product Detail (Sidebar Right)</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -233,10 +231,10 @@
                                                             <div class="menu-content">
                                                                 <ul>
                                                                     <li>
-                                                                        <a href="404.html">404 Page</a>
+                                                                        <a href="{% url '404' %}">404 Page</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="about-us.html">About Us Page</a>
+                                                                        <a href="{% url 'about-us' %}">About Us Page</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -248,7 +246,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="contact.html" class="parent">Contact US</a>
+                                    <a href="{% url 'contact' %}" class="parent">Contact US</a>
                                 </li>
                             </ul>
                         </div>
@@ -256,8 +254,7 @@
 
                     <!-- search and acount -->
                     <div class="col-sm-5 col-md-5 d-flex align-items-center justify-content-end" id="search_widget">
-                        <form method="get" action="#">
-
+                        <form method="get" action="{% url 'search' %}">
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                             <input type="text" name="s" value="" placeholder="Search" class="ui-autocomplete-input" autocomplete="off">
                             <button type="submit">
@@ -267,44 +264,41 @@
 
                         <div id="block_myaccount_infos" class="hidden-sm-down dropdown">
                             <div class="myaccount-title ">
-                                <a href="#acount" data-toggle="collapse" class="acount">
+                                <a href="javascript:void(0);" data-toggle="collapse" data-target="#acount" class="acount">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     <span>Account</span>
                                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </a>
-
                             </div>
 
                             <div id="acount" class="collapse">
-
                                 <div class="account-list-content">
-
                                     <div>
-                                        <a class="login" href="account.html" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="{% url 'account' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-cog"></i>
                                             <span>My Account</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="login" href="login.html" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="{% url 'login' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-sign-in"></i>
                                             <span>Sign in</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="register" href="register.html" rel="nofollow" title="Register Account">
+                                        <a class="register" href="{% url 'register' %}" rel="nofollow" title="Register Account">
                                             <i class="fa fa-user"></i>
                                             <span>Register Account</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="check-out" href="checkout.html" rel="nofollow" title="Checkout">
+                                        <a class="check-out" href="{% url 'checkout' %}" rel="nofollow" title="Checkout">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             <span>Checkout</span>
                                         </a>
                                     </div>
                                     <div class="link_wishlist">
-                                        <a href="wishlist.html" title="My Wishlists">
+                                        <a href="{% url 'wishlist' %}" title="My Wishlists">
                                             <i class="fa fa-heart"></i>
                                             <span>My Wishlists</span>
                                         </a>
@@ -312,33 +306,33 @@
                                     <div id="desktop_currency_selector" class="currency-selector groups-selector hidden-sm-down">
                                         <ul class="list-inline">
                                             <li>
-                                                <a title="Euro" rel="nofollow" href="#">EUR</a>
+                                                <a title="Euro" rel="nofollow" href="javascript:void(0);">EUR</a>
                                             </li>
                                             <li class="current list-inline-item">
-                                                <a title="British Pound Sterling" rel="nofollow" href="#">GBP</a>
+                                                <a title="British Pound Sterling" rel="nofollow" href="javascript:void(0);">GBP</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div id="desktop_language_selector" class="language-selector groups-selector hidden-sm-down">
                                         <ul class="list-inline">
                                             <li class="list-inline-itemcurrent">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas.jpg" alt="English" width="16" height="11">
+                                                <a href="javascript:void(0);">
+                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas.jpg' %}" alt="English" width="16" height="11">
                                                 </a>
                                             </li>
                                             <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas2.jpg" alt="Italiano" width="16" height="11">
+                                                <a href="javascript:void(0);">
+                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas2.jpg' %}" alt="Italiano" width="16" height="11">
                                                 </a>
                                             </li>
                                             <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas3.jpg" alt="Français" width="16" height="11">
+                                                <a href="javascript:void(0);">
+                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas3.jpg' %}" alt="Français" width="16" height="11">
                                                 </a>
                                             </li>
                                             <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas4.jpg" alt="Español" width="16" height="11">
+                                                <a href="javascript:void(0);">
+                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas4.jpg' %}" alt="Español" width="16" height="11">
                                                 </a>
                                             </li>
                                         </ul>
@@ -358,13 +352,13 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="product-image">
-                                                        <a href="product-detail.html">
-                                                            <img src="img/product/5.jpg" alt="Product">
+                                                        <a href="{% url 'product_detail' %}">
+                                                            <img src="{% static 'img/product/5.jpg' %}" alt="Product">
                                                         </a>
                                                     </td>
                                                     <td>
                                                         <div class="product-name">
-                                                            <a href="product-detail.html">Organic Strawberry Fruits</a>
+                                                            <a href="{% url 'product_detail' %}">Organic Strawberry Fruits</a>
                                                         </div>
                                                         <div>
                                                             2 x
@@ -372,7 +366,7 @@
                                                         </div>
                                                     </td>
                                                     <td class="action">
-                                                        <a class="remove" href="#">
+                                                        <a class="remove" href="javascript:void(0);">
                                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                         </a>
                                                     </td>
@@ -385,8 +379,8 @@
                                                 <tr>
                                                     <td colspan="3" class="d-flex justify-content-center">
                                                         <div class="cart-button">
-                                                            <a href="cart.html" title="View Cart">View Cart</a>
-                                                            <a href="checkout.html" title="Checkout">Checkout</a>
+                                                            <a href="{% url 'cart' %}" title="View Cart">View Cart</a>
+                                                            <a href="{% url 'checkout' %}" title="Checkout">Checkout</a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -416,17 +410,17 @@
                                 <div class="breadcrumb">
                                     <ol>
                                         <li>
-                                            <a href="#">
+                                            <a href="{% url 'home' %}">
                                                 <span>Home</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="javascript:void(0);">
                                                 <span>Living Room</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="javascript:void(0);">
                                                 <span>Sofa</span>
                                             </a>
                                         </li>
@@ -448,51 +442,51 @@
                                                         <i class="zmdi zmdi-minus"></i>
                                                         <i class="zmdi zmdi-plus"></i>
                                                     </span>
-                                                    <a class="cateItem" href="#">Living Room</a>
+                                                    <a class="cateItem" href="javascript:void(0);">Living Room</a>
                                                     <div class="subCategory collapse" id="livingroom" aria-expanded="true" role="status">
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Side Table</a>
+                                                            <a href="javascript:void(0);" class="cateItem">Side Table</a>
                                                             <div class="subCategory collapse" id="subCategory-fruits" aria-expanded="true" role="status">
                                                                 <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">Side Table</a>
+                                                                    <a href="javascript:void(0);" class="cateItem">Side Table</a>
                                                                 </div>
                                                                 <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">FIREPLACE</a>
+                                                                    <a href="javascript:void(0);" class="cateItem">FIREPLACE</a>
                                                                 </div>
                                                                 <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">FIREPLACE</a>
+                                                                    <a href="javascript:void(0);" class="cateItem">FIREPLACE</a>
                                                                 </div>
                                                                 <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">floor lamp</a>
+                                                                    <a href="javascript:void(0);" class="cateItem">floor lamp</a>
                                                                 </div>
                                                                 <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">ottoman</a>
+                                                                    <a href="javascript:void(0);" class="cateItem">ottoman</a>
                                                                 </div>
                                                                 <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">armchair</a>
+                                                                    <a href="javascript:void(0);" class="cateItem">armchair</a>
                                                                 </div>
                                                                 <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">cushion</a>
+                                                                    <a href="javascript:void(0);" class="cateItem">cushion</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FIREPLACE</a>
+                                                            <a href="javascript:void(0);" class="cateItem">FIREPLACE</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FIREPLACE</a>
+                                                            <a href="javascript:void(0);" class="cateItem">FIREPLACE</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">floor lamp</a>
+                                                            <a href="javascript:void(0);" class="cateItem">floor lamp</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ottoman</a>
+                                                            <a href="javascript:void(0);" class="cateItem">ottoman</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">armchair</a>
+                                                            <a href="javascript:void(0);" class="cateItem">armchair</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">cushion</a>
+                                                            <a href="javascript:void(0);" class="cateItem">cushion</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -501,22 +495,22 @@
                                                         <i class="zmdi zmdi-minus"></i>
                                                         <i class="zmdi zmdi-plus"></i>
                                                     </span>
-                                                    <a class="cateItem" href="#">Bathroom</a>
+                                                    <a class="cateItem" href="javascript:void(0);">Bathroom</a>
                                                     <div class="subCategory collapse" id="bathroom" aria-expanded="false" role="status">
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO</a>
+                                                            <a href="javascript:void(0);" class="cateItem">TOMATO</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BROCCOLI</a>
+                                                            <a href="javascript:void(0);" class="cateItem">BROCCOLI</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CABBAGE</a>
+                                                            <a href="javascript:void(0);" class="cateItem">CABBAGE</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CUCUMBER</a>
+                                                            <a href="javascript:void(0);" class="cateItem">CUCUMBER</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">EGGPLANT</a>
+                                                            <a href="javascript:void(0);" class="cateItem">EGGPLANT</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -525,19 +519,19 @@
                                                         <i class="zmdi zmdi-minus"></i>
                                                         <i class="zmdi zmdi-plus"></i>
                                                     </span>
-                                                    <a class="cateItem" href="#">Dining Rooom</a>
+                                                    <a class="cateItem" href="javascript:void(0);">Dining Rooom</a>
                                                     <div class="subCategory collapse" id="diningroom" aria-expanded="true" role="status">
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">DRY BREAD</a>
+                                                            <a href="javascript:void(0);" class="cateItem">DRY BREAD</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BREAD SLICES</a>
+                                                            <a href="javascript:void(0);" class="cateItem">BREAD SLICES</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">FRENCH BREAD</a>
+                                                            <a href="javascript:void(0);" class="cateItem">FRENCH BREAD</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BLACK BREAD</a>
+                                                            <a href="javascript:void(0);" class="cateItem">BLACK BREAD</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -546,16 +540,16 @@
                                                         <i class="zmdi zmdi-minus"></i>
                                                         <i class="zmdi zmdi-plus"></i>
                                                     </span>
-                                                    <a class="cateItem" href="#">Bedroom</a>
+                                                    <a class="cateItem" href="javascript:void(0);">Bedroom</a>
                                                     <div class="subCategory collapse" id="bedroom" aria-expanded="true" role="status">
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ORANGE JUICES</a>
+                                                            <a href="javascript:void(0);" class="cateItem">ORANGE JUICES</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO JUICES</a>
+                                                            <a href="javascript:void(0);" class="cateItem">TOMATO JUICES</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">APPLE JUICES</a>
+                                                            <a href="javascript:void(0);" class="cateItem">APPLE JUICES</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -564,16 +558,16 @@
                                                         <i class="zmdi zmdi-minus"></i>
                                                         <i class="zmdi zmdi-plus"></i>
                                                     </span>
-                                                    <a class="cateItem" href="#">Kitchen</a>
+                                                    <a class="cateItem" href="javascript:void(0);">Kitchen</a>
                                                     <div class="subCategory collapse" id="kitchen" aria-expanded="true" role="status">
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ORANGE JUICES</a>
+                                                            <a href="javascript:void(0);" class="cateItem">ORANGE JUICES</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO JUICES</a>
+                                                            <a href="javascript:void(0);" class="cateItem">TOMATO JUICES</a>
                                                         </div>
                                                         <div class="cateTitle">
-                                                            <a href="#" class="cateItem">APPLE JUICES</a>
+                                                            <a href="javascript:void(0);" class="cateItem">APPLE JUICES</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -587,7 +581,7 @@
                                             <div class="post-item-content">
                                                 <div>
                                                     <div class="late-item first-child">
-                                                        <a href="blog-detail.html">
+                                                        <a href="{% url 'blog_detail' %}">
                                                             <p class="content-title">Lorem ipsum dolor sit amet</p>
                                                         </a>
                                                         <span>
@@ -599,13 +593,13 @@
                                                             nonummy...
                                                         </p>
                                                         <p class="remove">
-                                                            <a href="blog-detail.html">READ MORE</a>
+                                                            <a href="{% url 'blog_detail' %}">READ MORE</a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <div class="late-item">
-                                                        <a href="blog-detail.html">
+                                                        <a href="{% url 'blog_detail' %}">
                                                             <p class="content-title">Lorem ipsum dolor sit amet</p>
                                                         </a>
                                                         <span>
@@ -617,7 +611,7 @@
                                                             nonummy...
                                                         </p>
                                                         <p class="remove">
-                                                            <a href="blog-detail.html">READ MORE</a>
+                                                            <a href="{% url 'blog_detail' %}">READ MORE</a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -632,47 +626,47 @@
                                             <div class="block-content">
                                                 <ul class="listSidebarBlog list-unstyled">
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Hot Trend">Hot Trend</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Hot Trend">Hot Trend</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Jewelry">Jewelry</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Jewelry">Jewelry</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="man.html" title="Show products matching tag Man">Man</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Man">Man</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Party">Party</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Party">Party</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag SamSung">SamSung</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag SamSung">SamSung</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Shirt Dresses">Shirt Dresses</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Shirt Dresses">Shirt Dresses</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Shoes">Shoes</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Shoes">Shoes</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Summer">Summer</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Summer">Summer</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Sweaters">Sweaters</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Sweaters">Sweaters</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Winter">Winter</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Winter">Winter</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#" title="Show products matching tag Woman">Woman</a>
+                                                        <a href="javascript:void(0);" title="Show products matching tag Woman">Woman</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -681,8 +675,8 @@
                                         <!-- advertising -->
                                         <div class="sidebar-block group-image-special">
                                             <div class="effect">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/blog/advertising.jpg" alt="banner-2" title="banner-2">
+                                                <a href="javascript:void(0);">
+                                                    <img class="img-fluid" src="{% static 'img/blog/advertising.jpg' %}" alt="banner-2" title="banner-2">
                                                 </a>
                                             </div>
                                         </div>
@@ -690,7 +684,7 @@
                                     <div class="col-sm-8 col-lg-9 col-md-9 flex-xs-first main-blogs">
                                         <h3>Rutrum Nonvopxe Sapiente Delectus Aut Bonbde</h3>
                                         <div class="hover-after">
-                                            <img src="img/blog/detail.jpg" alt="img" class="img-fluid">
+                                            <img src="{% static 'img/blog/detail.jpg' %}" alt="img" class="img-fluid">
                                         </div>
                                         <div class="late-item">
                                             <p>
@@ -718,12 +712,12 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 p-left">
                                                             <div class="effect">
-                                                                <img class="img-fluid" src="img/blog/3.jpg" alt="banner-1" title="banner-1">
+                                                                <img class="img-fluid" src="{% static 'img/blog/3.jpg' %}" alt="banner-1" title="banner-1">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 p-right">
                                                             <div class="effect">
-                                                                <img class="img-fluid" src="img/blog/2.jpg" alt="banner-2" title="banner-2">
+                                                                <img class="img-fluid" src="{% static 'img/blog/2.jpg' %}" alt="banner-2" title="banner-2">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -747,15 +741,15 @@
                                                     <span>TIVATHEME</span>
                                                 </p>
                                                 <div class="btn-group">
-                                                    <a href="#">
+                                                    <a href="javascript:void(0);">
                                                         <i class="zmdi zmdi-share"></i>
                                                         <span>Share</span>
                                                     </a>
-                                                    <a href="#" class="email">
+                                                    <a href="javascript:void(0);" class="email">
                                                         <i class="fa fa-envelope" aria-hidden="true"></i>
                                                         <span>SEN TO A FRIEND</span>
                                                     </a>
-                                                    <a href="#" class="print">
+                                                    <a href="javascript:void(0);" class="print" onclick="window.print();">
                                                         <i class="zmdi zmdi-print"></i>
                                                         <span>Print</span>
                                                     </a>
@@ -764,10 +758,10 @@
                                         </div>
 
                                         <div class="admin">
-                                            <img src="img/blog/user.jpg" alt="img" class="float-left right">
+                                            <img src="{% static 'img/blog/user.jpg' %}" alt="img" class="float-left right">
                                             <div class="info">
                                                 <p>
-                                                    <a href="#">
+                                                    <a href="javascript:void(0);">
                                                         <span class="content-title">
                                                             John doe
                                                         </span>
@@ -785,13 +779,13 @@
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="hover-after">
-                                                            <a href="blog-detail.html">
-                                                                <img src="img/blog/7.jpg" alt="img" class="img-fluid">
+                                                            <a href="{% url 'blog_detail' %}">
+                                                                <img src="{% static 'img/blog/7.jpg' %}" alt="img" class="img-fluid">
                                                             </a>
                                                         </div>
                                                         <div class="late-item">
                                                             <p class="content-title">
-                                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
+                                                                <a href="{% url 'blog_detail' %}">Lorem ipsum dolor sit amet</a>
                                                             </p>
                                                             <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
                                                                 lorem quis bibendum auctor.
@@ -800,13 +794,13 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="hover-after">
-                                                            <a href="blog-detail.html">
-                                                                <img src="img/blog/8.jpg" alt="img" class="img-fluid">
+                                                            <a href="{% url 'blog_detail' %}">
+                                                                <img src="{% static 'img/blog/8.jpg' %}" alt="img" class="img-fluid">
                                                             </a>
                                                         </div>
                                                         <div class="late-item">
                                                             <p class="content-title">
-                                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
+                                                                <a href="{% url 'blog_detail' %}">Lorem ipsum dolor sit amet</a>
                                                             </p>
                                                             <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
                                                                 lorem quis bibendum auctor.
@@ -815,13 +809,13 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="hover-after">
-                                                            <a href="blog-detail.html">
-                                                                <img src="img/blog/9.jpg" alt="img" class="img-fluid">
+                                                            <a href="{% url 'blog_detail' %}">
+                                                                <img src="{% static 'img/blog/9.jpg' %}" alt="img" class="img-fluid">
                                                             </a>
                                                         </div>
                                                         <div class="late-item">
                                                             <p class="content-title">
-                                                                <a href="blog-detail.html">Lorem ipsum dolor sit amet</a>
+                                                                <a href="{% url 'blog_detail' %}">Lorem ipsum dolor sit amet</a>
                                                             </p>
                                                             <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
                                                                 lorem quis bibendum auctor .
@@ -834,15 +828,15 @@
                                         <div class="reply late-item">
                                             <div class="blog-comment" id="blog-comment">
                                                 <h2 class="title-block">Comments</h2>
-                                                <img src="img/blog/user1.jpg" alt="img" class="float-left right">
+                                                <img src="{% static 'img/blog/user1.jpg' %}" alt="img" class="float-left right">
                                             </div>
                                             <div class="comment-content">
                                                 <p class="user-title">
-                                                    <a href="#">JOHN DOE</a>
+                                                    <a href="javascript:void(0);">JOHN DOE</a>
                                                     <span class="time">Posted on Mar 17, 2017 at 6:57am /
-                                                        <a href="#">repost</a> /
+                                                        <a href="javascript:void(0);">repost</a> /
                                                         <span class="green">
-                                                            <a href="#">Reply</a>
+                                                            <a href="javascript:void(0);">Reply</a>
                                                         </span>
                                                     </span>
                                                 </p>
@@ -852,15 +846,15 @@
                                             </div>
                                             <div class="blog-comment margin-right-comment">
                                                 <div class="avatar">
-                                                    <img src="img/blog/user2.jpg" alt="img" class="float-left">
+                                                    <img src="{% static 'img/blog/user2.jpg' %}" alt="img" class="float-left">
                                                 </div>
                                                 <div class="comment-content">
                                                     <p class="user-title">
-                                                        <a href="#">JOHN DOE</a>
+                                                        <a href="javascript:void(0);">JOHN DOE</a>
                                                         <span class="time">Posted on Mar 17, 2017 at 6:57am /
-                                                            <a href="#">repost</a> /
+                                                            <a href="javascript:void(0);">repost</a> /
                                                             <span class="green">
-                                                                <a href="#">Reply</a>
+                                                                <a href="javascript:void(0);">Reply</a>
                                                             </span>
                                                         </span>
                                                     </p>
@@ -872,15 +866,15 @@
                                             </div>
                                             <div class="blog-comment">
                                                 <div class="avatar">
-                                                    <img src="img/blog/user1.jpg" alt="img" class="float-left right">
+                                                    <img src="{% static 'img/blog/user1.jpg' %}" alt="img" class="float-left right">
                                                 </div>
                                                 <div class="comment-content">
                                                     <p class="user-title">
-                                                        <a href="#">JOHN DOE</a>
+                                                        <a href="javascript:void(0);">JOHN DOE</a>
                                                         <span class="time">Posted on Mar 17, 2017 at 6:57am /
-                                                            <a href="#">repost</a> /
+                                                            <a href="javascript:void(0);">repost</a> /
                                                             <span class="green">
-                                                                <a href="#">Reply</a>
+                                                                <a href="javascript:void(0);">Reply</a>
                                                             </span>
                                                         </span>
                                                     </p>
@@ -894,14 +888,15 @@
                                         <div class="submit-comment" id="respond">
                                             <h2 class="title-block">Submit comment</h2>
                                             <div id="commentInput">
-                                                <form action="#" method="post" id="commentform">
+                                                <form action="{% url 'submit-comment' %}" method="post" id="commentform">
+                                                    {% csrf_token %}
                                                     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                                                     <div class="row">
                                                         <div class="form-group col col-sm-12 col-md-4 ">
-                                                            <input type="text" class="inputName form-control" name="name" placeholder="Your Name *">
+                                                            <input type="text" class="inputName form-control" name="name" placeholder="Your Name *" required>
                                                         </div>
                                                         <div class="form-group col col-sm-12  col-md-4">
-                                                            <input type="text" class="inputMail form-control" name="mail" placeholder="Your E-mail *">
+                                                            <input type="email" class="inputMail form-control" name="mail" placeholder="Your E-mail *" required>
                                                         </div>
                                                         <div class="form-group col col-sm-12  col-md-4">
                                                             <input type="text" class="form-control" name="website" placeholder="Your Website">
@@ -909,7 +904,7 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col col-md-12">
-                                                            <textarea tabindex="4" class="inputContent form-control grey" rows="10" name="comment" placeholder="Your Message"></textarea>
+                                                            <textarea tabindex="4" class="inputContent form-control grey" rows="10" name="comment" placeholder="Your Message" required></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="submit">
@@ -938,7 +933,7 @@
                             <div class="block">
                                 <div class="block-content">
                                     <p class="logo-footer">
-                                        <img src="img/home/logo.png" alt="img">
+                                        <img src="{% static 'img/home/logo.png' %}" alt="img">
                                     </p>
                                     <p class="content-logo">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
                                         ut labore et dolore magna aliqua. Ut enim ad minim
@@ -949,19 +944,19 @@
                                 <div class="block-content">
                                     <ul>
                                         <li>
-                                            <a href="#">About Us</a>
+                                            <a href="javascript:void(0);">About Us</a>
                                         </li>
                                         <li>
-                                            <a href="#">Reasons to shop</a>
+                                            <a href="javascript:void(0);">Reasons to shop</a>
                                         </li>
                                         <li>
-                                            <a href="#">What our customers say</a>
+                                            <a href="javascript:void(0);">What our customers say</a>
                                         </li>
                                         <li>
-                                            <a href="#">Meet the teaml</a>
+                                            <a href="javascript:void(0);">Meet the teaml</a>
                                         </li>
                                         <li>
-                                            <a href="#">Contact our buyers</a>
+                                            <a href="javascript:void(0);">Contact our buyers</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -969,7 +964,7 @@
                             <div class="block">
                                 <div class="block-content">
                                     <p class="img-payment ">
-                                        <img class="img-fluid" src="img/home/payment-footer.png" alt="img">
+                                        <img class="img-fluid" src="{% static 'img/home/payment-footer.png' %}" alt="img">
                                     </p>
                                 </div>
                             </div>
@@ -1029,16 +1024,16 @@
                                         to your inbox
                                     </div>
                                     <div class="block-newsletter">
-                                        <form action="#" method="post">
+                                        <form action="{% url 'newsletter' %}" method="post">
+                                            {% csrf_token %}
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="email" value="" placeholder="Enter Your Email">
+                                                <input type="email" class="form-control" name="email" value="" placeholder="Enter Your Email" required>
                                                 <span class="input-group-btn">
                                                     <button class="effect-btn btn btn-secondary " name="submitNewsletter" type="submit">
                                                         <span>subscribe</span>
                                                     </button>
                                                 </span>
                                             </div>
-                                            <input type="hidden" name="action" value="0">
                                         </form>
                                     </div>
                                 </div>
@@ -1053,22 +1048,22 @@
                                             <div class="social">
                                                 <ul class="list-inline mb-0 justify-content-end">
                                                     <li class="list-inline-item mb-0">
-                                                        <a href="#" target="_blank">
+                                                        <a href="javascript:void(0);" target="_blank">
                                                             <i class="fa fa-facebook"></i>
                                                         </a>
                                                     </li>
                                                     <li class="list-inline-item mb-0">
-                                                        <a href="#" target="_blank">
+                                                        <a href="javascript:void(0);" target="_blank">
                                                             <i class="fa fa-twitter"></i>
                                                         </a>
                                                     </li>
                                                     <li class="list-inline-item mb-0">
-                                                        <a href="#" target="_blank">
+                                                        <a href="javascript:void(0);" target="_blank">
                                                             <i class="fa fa-google"></i>
                                                         </a>
                                                     </li>
                                                     <li class="list-inline-item mb-0">
-                                                        <a href="#" target="_blank">
+                                                        <a href="javascript:void(0);" target="_blank">
                                                             <i class="fa fa-instagram"></i>
                                                         </a>
                                                     </li>
@@ -1085,10 +1080,9 @@
                                             Payment accept
                                         </div>
                                         <div class="payment-image">
-                                            <img class="img-fluid" src="img/home/payment.png" alt="img">
+                                            <img class="img-fluid" src="{% static 'img/home/payment.png' %}" alt="img">
                                         </div>
                                     </div>
-                                    <!-- Popup newsletter -->
                                 </div>
                             </div>
                         </div>
@@ -1111,7 +1105,7 @@
 
     <!-- back top top -->
     <div class="back-to-top">
-        <a href="#">
+        <a href="javascript:void(0);" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
             <i class="fa fa-long-arrow-up"></i>
         </a>
     </div>
@@ -1126,8 +1120,8 @@
                 <div class="verticalmenu" role="navigation">
                     <ul class="menu level1">
                         <li class="item  parent">
-                            <a href="#" class="hasicon" title="SIDE TABLE">
-                                <img src="img/home/table-lamp.png" alt="img">SIDE TABLE</a>
+                            <a href="javascript:void(0);" class="hasicon" title="SIDE TABLE">
+                                <img src="{% static 'img/home/table-lamp.png' %}" alt="img">SIDE TABLE</a>
                             <span class="arrow collapsed" data-toggle="collapse" data-target="#SIDE-TABLE" aria-expanded="false" role="status">
                                 <i class="zmdi zmdi-minus"></i>
                                 <i class="zmdi zmdi-plus"></i>
@@ -1135,10 +1129,10 @@
                             <div class="subCategory collapse" id="SIDE-TABLE" aria-expanded="true" role="status">
                                 <ul>
                                     <li class="item">
-                                        <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
+                                        <a href="javascript:void(0);" title="Aliquam lobortis">Aliquam lobortis</a>
                                     </li>
                                     <li class="item  parent-submenu">
-                                        <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
+                                        <a href="javascript:void(0);" title="Duis Reprehenderit">Duis Reprehenderit</a>
                                         <span class="arrow collapsed" data-toggle="collapse" data-target="#sub-Category" aria-expanded="false" role="status">
                                             <i class="zmdi zmdi-minus"></i>
                                             <i class="zmdi zmdi-plus"></i>
@@ -1146,38 +1140,38 @@
                                         <div class="subCategory collapse" id="sub-Category" aria-expanded="true" role="status">
                                             <ul>
                                                 <li class="item">
-                                                    <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
+                                                    <a href="javascript:void(0);" title="Aliquam lobortis">Aliquam lobortis</a>
                                                 </li>
                                                 <li class="item">
-                                                    <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
+                                                    <a href="javascript:void(0);" title="Duis Reprehenderit">Duis Reprehenderit</a>
                                                 </li>
                                                 <li class="item">
-                                                    <a href="#" title="Voluptate">Voluptate</a>
+                                                    <a href="javascript:void(0);" title="Voluptate">Voluptate</a>
                                                 </li>
                                                 <li class="item">
-                                                    <a href="#" title="Tongue Est">Tongue Est</a>
+                                                    <a href="javascript:void(0);" title="Tongue Est">Tongue Est</a>
                                                 </li>
                                                 <li class="item">
-                                                    <a href="#" title="Venison Andouille">Venison Andouille</a>
+                                                    <a href="javascript:void(0);" title="Venison Andouille">Venison Andouille</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="item">
-                                        <a href="#" title="Voluptate">Voluptate</a>
+                                        <a href="javascript:void(0);" title="Voluptate">Voluptate</a>
                                     </li>
                                     <li class="item">
-                                        <a href="#" title="Tongue Est">Tongue Est</a>
+                                        <a href="javascript:void(0);" title="Tongue Est">Tongue Est</a>
                                     </li>
                                     <li class="item">
-                                        <a href="#" title="Venison Andouille">Venison Andouille</a>
+                                        <a href="javascript:void(0);" title="Venison Andouille">Venison Andouille</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="item  parent group">
-                            <a href="#" class="hasicon" title="FI">
-                                <img src="img/home/fireplace.png" alt="img">FIREPLACE
+                            <a href="javascript:void(0);" class="hasicon" title="FI">
+                                <img src="{% static 'img/home/fireplace.png' %}" alt="img">FIREPLACE
                             </a>
                             <span class="arrow collapsed" data-toggle="collapse" data-target="#fi" aria-expanded="false" role="status">
                                 <i class="zmdi zmdi-minus"></i>
@@ -1192,34 +1186,34 @@
                                             </div>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
+                                                    <a href="javascript:void(0);">Toshiba</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
+                                                    <a href="javascript:void(0);">Samsung</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">LG</a>
+                                                    <a href="javascript:void(0);">LG</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
+                                                    <a href="javascript:void(0);">Sharp</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
+                                                    <a href="javascript:void(0);">Electrolux</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
+                                                    <a href="javascript:void(0);">Hitachi</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
+                                                    <a href="javascript:void(0);">Panasonic</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
+                                                    <a href="javascript:void(0);">Mitsubishi Electric</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
+                                                    <a href="javascript:void(0);">Daikin</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
+                                                    <a href="javascript:void(0);">Haier</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1229,49 +1223,49 @@
                                             </div>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
+                                                    <a href="javascript:void(0);">Toshiba</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
+                                                    <a href="javascript:void(0);">Samsung</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">LG</a>
+                                                    <a href="javascript:void(0);">LG</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
+                                                    <a href="javascript:void(0);">Sharp</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
+                                                    <a href="javascript:void(0);">Electrolux</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
+                                                    <a href="javascript:void(0);">Hitachi</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
+                                                    <a href="javascript:void(0);">Panasonic</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
+                                                    <a href="javascript:void(0);">Mitsubishi Electric</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
+                                                    <a href="javascript:void(0);">Daikin</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Haier Media</a>
+                                                    <a href="javascript:void(0);">Haier Media</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
+                                                    <a href="javascript:void(0);">Gee</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
+                                                    <a href="javascript:void(0);">Digimart</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
+                                                    <a href="javascript:void(0);">Vitivaa</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
+                                                    <a href="javascript:void(0);">Sanaky</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
+                                                    <a href="javascript:void(0);">Sunshine</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1281,52 +1275,52 @@
                                             </div>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#">Media</a>
+                                                    <a href="javascript:void(0);">Media</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
+                                                    <a href="javascript:void(0);">Gee</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
+                                                    <a href="javascript:void(0);">Digimart</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
+                                                    <a href="javascript:void(0);">Vitivaa</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
+                                                    <a href="javascript:void(0);">Sanaky</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
+                                                    <a href="javascript:void(0);">Sunshine</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
+                                                    <a href="javascript:void(0);">Toshiba</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
+                                                    <a href="javascript:void(0);">Samsung</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">LG</a>
+                                                    <a href="javascript:void(0);">LG</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
+                                                    <a href="javascript:void(0);">Sharp</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
+                                                    <a href="javascript:void(0);">Electrolux</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
+                                                    <a href="javascript:void(0);">Hitachi</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
+                                                    <a href="javascript:void(0);">Panasonic</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
+                                                    <a href="javascript:void(0);">Mitsubishi Electric</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
+                                                    <a href="javascript:void(0);">Daikin</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
+                                                    <a href="javascript:void(0);">Haier</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1336,28 +1330,28 @@
                                             </div>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#">LG</a>
+                                                    <a href="javascript:void(0);">LG</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
+                                                    <a href="javascript:void(0);">Sharp</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
+                                                    <a href="javascript:void(0);">Electrolux</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
+                                                    <a href="javascript:void(0);">Hitachi</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
+                                                    <a href="javascript:void(0);">Panasonic</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
+                                                    <a href="javascript:void(0);">Mitsubishi Electric</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
+                                                    <a href="javascript:void(0);">Daikin</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
+                                                    <a href="javascript:void(0);">Haier</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1367,28 +1361,28 @@
                                             </div>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#">LG</a>
+                                                    <a href="javascript:void(0);">LG</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
+                                                    <a href="javascript:void(0);">Sharp</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
+                                                    <a href="javascript:void(0);">Electrolux</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
+                                                    <a href="javascript:void(0);">Hitachi</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
+                                                    <a href="javascript:void(0);">Panasonic</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
+                                                    <a href="javascript:void(0);">Mitsubishi Electric</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
+                                                    <a href="javascript:void(0);">Daikin</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
+                                                    <a href="javascript:void(0);">Haier</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1398,28 +1392,28 @@
                                             </div>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#">LG</a>
+                                                    <a href="javascript:void(0);">LG</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
+                                                    <a href="javascript:void(0);">Sharp</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
+                                                    <a href="javascript:void(0);">Electrolux</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
+                                                    <a href="javascript:void(0);">Hitachi</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
+                                                    <a href="javascript:void(0);">Panasonic</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
+                                                    <a href="javascript:void(0);">Mitsubishi Electric</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
+                                                    <a href="javascript:void(0);">Daikin</a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
+                                                    <a href="javascript:void(0);">Haier</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1428,8 +1422,8 @@
                             </div>
                         </li>
                         <li class="item group-category-img parent group">
-                            <a href="#" class="hasicon" title="TABLE LAMP">
-                                <img src="img/home/table-lamp.png" alt="img">TABLE LAMP</a>
+                            <a href="javascript:void(0);" class="hasicon" title="TABLE LAMP">
+                                <img src="{% static 'img/home/table-lamp.png' %}" alt="img">TABLE LAMP</a>
                             <span class="arrow collapsed" data-toggle="collapse" data-target="#table-lamp" aria-expanded="false" role="status">
                                 <i class="zmdi zmdi-minus"></i>
                                 <i class="zmdi zmdi-plus"></i>
@@ -1441,25 +1435,25 @@
                                             <span class="menu-title">Coventry dining</span>
                                             <ul>
                                                 <li>
-                                                    <a href="#">Accessories</a>
+                                                    <a href="javascript:void(0);">Accessories</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Activewear</a>
+                                                    <a href="javascript:void(0);">Activewear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">ASOS Basic Tops</a>
+                                                    <a href="javascript:void(0);">ASOS Basic Tops</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Bags &amp; Purses</a>
+                                                    <a href="javascript:void(0);">Bags &amp; Purses</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Beauty</a>
+                                                    <a href="javascript:void(0);">Beauty</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
+                                                    <a href="javascript:void(0);">Coats &amp; Jackets</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
+                                                    <a href="javascript:void(0);">Curve &amp; Plus Size</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1467,25 +1461,25 @@
                                             <span class="menu-title">Amara stools</span>
                                             <ul>
                                                 <li>
-                                                    <a href="#">Accessories</a>
+                                                    <a href="javascript:void(0);">Accessories</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Activewear</a>
+                                                    <a href="javascript:void(0);">Activewear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">ASOS Basic Tops</a>
+                                                    <a href="javascript:void(0);">ASOS Basic Tops</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Bags &amp; Purses</a>
+                                                    <a href="javascript:void(0);">Bags &amp; Purses</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Beauty</a>
+                                                    <a href="javascript:void(0);">Beauty</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
+                                                    <a href="javascript:void(0);">Coats &amp; Jackets</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
+                                                    <a href="javascript:void(0);">Curve &amp; Plus Size</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1493,25 +1487,25 @@
                                             <span class="menu-title">Kingston dining</span>
                                             <ul>
                                                 <li>
-                                                    <a href="#">Accessories</a>
+                                                    <a href="javascript:void(0);">Accessories</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Activewear</a>
+                                                    <a href="javascript:void(0);">Activewear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">ASOS Basic Tops</a>
+                                                    <a href="javascript:void(0);">ASOS Basic Tops</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Bags &amp; Purses</a>
+                                                    <a href="javascript:void(0);">Bags &amp; Purses</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Beauty</a>
+                                                    <a href="javascript:void(0);">Beauty</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
+                                                    <a href="javascript:void(0);">Coats &amp; Jackets</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
+                                                    <a href="javascript:void(0);">Curve &amp; Plus Size</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1519,25 +1513,25 @@
                                             <span class="menu-title">Ellinger dining</span>
                                             <ul>
                                                 <li>
-                                                    <a href="#">Accessories</a>
+                                                    <a href="javascript:void(0);">Accessories</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Activewear</a>
+                                                    <a href="javascript:void(0);">Activewear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">ASOS Basic Tops</a>
+                                                    <a href="javascript:void(0);">ASOS Basic Tops</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Bags &amp; Purses</a>
+                                                    <a href="javascript:void(0);">Bags &amp; Purses</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Beauty</a>
+                                                    <a href="javascript:void(0);">Beauty</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
+                                                    <a href="javascript:void(0);">Coats &amp; Jackets</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
+                                                    <a href="javascript:void(0);">Curve &amp; Plus Size</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1546,77 +1540,77 @@
                             </div>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="OTTOMAN">
-                                <img src="img/home/ottoman.png" alt="img">OTTOMAN
+                            <a href="javascript:void(0);" class="hasicon" title="OTTOMAN">
+                                <img src="{% static 'img/home/ottoman.png' %}" alt="img">OTTOMAN
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="ARMCHAIR">
-                                <img src="img/home/armchair.png" alt="img">ARMCHAIR
+                            <a href="javascript:void(0);" class="hasicon" title="ARMCHAIR">
+                                <img src="{% static 'img/home/armchair.png' %}" alt="img">ARMCHAIR
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="CUSHION">
-                                <img src="img/home/cushion.png" alt="img">CUSHION
+                            <a href="javascript:void(0);" class="hasicon" title="CUSHION">
+                                <img src="{% static 'img/home/cushion.png' %}" alt="img">CUSHION
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="COFFEE TABLE">
-                                <img src="img/home/coffee_table.png" alt="img">COFFEE TABLE</a>
+                            <a href="javascript:void(0);" class="hasicon" title="COFFEE TABLE">
+                                <img src="{% static 'img/home/coffee_table.png' %}" alt="img">COFFEE TABLE</a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="SHELF">
-                                <img src="img/home/shelf.png" alt="img">SHELF
+                            <a href="javascript:void(0);" class="hasicon" title="SHELF">
+                                <img src="{% static 'img/home/shelf.png' %}" alt="img">SHELF
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="SOFA">
-                                <img src="img/home/sofa.png" alt="img">SOFA
+                            <a href="javascript:void(0);" class="hasicon" title="SOFA">
+                                <img src="{% static 'img/home/sofa.png' %}" alt="img">SOFA
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="DRESSING TABLE">
-                                <img src="img/home/dressing.png" alt="img">DRESSING TABLE</a>
+                            <a href="javascript:void(0);" class="hasicon" title="DRESSING TABLE">
+                                <img src="{% static 'img/home/dressing.png' %}" alt="img">DRESSING TABLE</a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="WINDOWN CURTAIN">
-                                <img src="img/home/windown.png" alt="img">WINDOWN CURTAIN</a>
+                            <a href="javascript:void(0);" class="hasicon" title="WINDOWN CURTAIN">
+                                <img src="{% static 'img/home/windown.png' %}" alt="img">WINDOWN CURTAIN</a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="CHANDELIER">
-                                <img src="img/home/chandelier.png" alt="img">CHANDELIER
+                            <a href="javascript:void(0);" class="hasicon" title="CHANDELIER">
+                                <img src="{% static 'img/home/chandelier.png' %}" alt="img">CHANDELIER
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="CEILING FAN">
-                                <img src="img/home/ceiling_fan.png" alt="img">CEILING FAN</a>
+                            <a href="javascript:void(0);" class="hasicon" title="CEILING FAN">
+                                <img src="{% static 'img/home/ceiling_fan.png' %}" alt="img">CEILING FAN</a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="WARDROBE">
-                                <img src="img/home/wardrobe.png" alt="img">WARDROBE
+                            <a href="javascript:void(0);" class="hasicon" title="WARDROBE">
+                                <img src="{% static 'img/home/wardrobe.png' %}" alt="img">WARDROBE
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="FLOOR LAMP">
-                                <img src="img/home/floor_lamp.png" alt="img">FLOOR LAMP</a>
+                            <a href="javascript:void(0);" class="hasicon" title="FLOOR LAMP">
+                                <img src="{% static 'img/home/floor_lamp.png' %}" alt="img">FLOOR LAMP</a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="VASE-FLOWER ">
-                                <img src="img/home/vase-flower.png" alt="img">VASE-FLOWER
+                            <a href="javascript:void(0);" class="hasicon" title="VASE-FLOWER ">
+                                <img src="{% static 'img/home/vase-flower.png' %}" alt="img">VASE-FLOWER
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="BED">
-                                <img src="img/home/bed.png" alt="img">BED
+                            <a href="javascript:void(0);" class="hasicon" title="BED">
+                                <img src="{% static 'img/home/bed.png' %}" alt="img">BED
                             </a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="BED GIRL">
-                                <img src="img/home/bed.png" alt="img">BED GIRL</a>
+                            <a href="javascript:void(0);" class="hasicon" title="BED GIRL">
+                                <img src="{% static 'img/home/bed.png' %}" alt="img">BED GIRL</a>
                         </li>
                         <li class="item">
-                            <a href="#" class="hasicon" title="BED BOY">
-                                <img src="img/home/bed.png" alt="img">BED BOY</a>
+                            <a href="javascript:void(0);" class="hasicon" title="BED BOY">
+                                <img src="{% static 'img/home/bed.png' %}" alt="img">BED BOY</a>
                         </li>
                     </ul>
                 </div>
@@ -1642,24 +1636,24 @@
                                     <i class="zmdi zmdi-minus"></i>
                                     <i class="zmdi zmdi-plus"></i>
                                 </span>
-                                <a href="home.html" title="Home">
+                                <a href="{% url 'home' %}" title="Home">
                                     <i class="fa fa-home" aria-hidden="true"></i>Home</a>
                                 <div class="subCategory collapse" id="home1" aria-expanded="true" role="status">
                                     <ul>
                                         <li class="item">
-                                            <a href="home.html" title="Home Page 1">Home Page 1</a>
+                                            <a href="{% url 'home' %}" title="Home Page 1">Home Page 1</a>
                                         </li>
                                         <li class="item">
-                                            <a href="home2.html" title="Home Page 2">Home Page 2</a>
+                                            <a href="{% url 'home2' %}" title="Home Page 2">Home Page 2</a>
                                         </li>
                                         <li class="item">
-                                            <a href="home3.html" title="Home Page 3">Home Page 3</a>
+                                            <a href="{% url 'home3' %}" title="Home Page 3">Home Page 3</a>
                                         </li>
                                         <li class="item">
-                                            <a href="home4.html" title="Home Page 4">Home Page 4</a>
+                                            <a href="{% url 'home4' %}" title="Home Page 4">Home Page 4</a>
                                         </li>
                                         <li class="item">
-                                            <a href="home5.html" title="Home Page 5">Home Page 5</a>
+                                            <a href="{% url 'home5' %}" title="Home Page 5">Home Page 5</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -1669,28 +1663,28 @@
                                     <i class="zmdi zmdi-minus"></i>
                                     <i class="zmdi zmdi-plus"></i>
                                 </span>
-                                <a href="#" title="Blog">
+                                <a href="javascript:void(0);" title="Blog">
                                     <i class="fa fa-address-book" aria-hidden="true"></i>Blog</a>
 
                                 <div class="subCategory collapse" id="blog" aria-expanded="true" role="status">
                                     <ul>
                                         <li class="item">
-                                            <a href="blogs-list.html" title="Blog List (Sidebar Left)">Blog List (Sidebar Left)</a>
+                                            <a href="{% url 'blogs_list' %}" title="Blog List (Sidebar Left)">Blog List (Sidebar Left)</a>
                                         </li>
                                         <li class="item">
-                                            <a href="blog-list-sidebar-left2.html" title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
+                                            <a href="{% url 'blog_list_sidebar_left2' %}" title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
                                         </li>
                                         <li class="item">
-                                            <a href="blog-list-sidebar-right.html" title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
+                                            <a href="{% url 'blog_list_sidebar_right' %}" title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
                                         </li>
                                         <li class="item">
-                                            <a href="blog-list-no-sidebar.html" title="Blog List (No Sidebar)">Blog List (No Sidebar)</a>
+                                            <a href="{% url 'blog_list_no_sidebar' %}" title="Blog List (No Sidebar)">Blog List (No Sidebar)</a>
                                         </li>
                                         <li class="item">
-                                            <a href="blog-grid-no-sidebar.html" title="Blog Grid (No Sidebar)">Blog Grid (No Sidebar)</a>
+                                            <a href="{% url 'blog_grid_no_sidebar' %}" title="Blog Grid (No Sidebar)">Blog Grid (No Sidebar)</a>
                                         </li>
                                         <li class="item">
-                                            <a href="blog-detail.html" title="Blog Detail">Blog Detail</a>
+                                            <a href="{% url 'blog_detail' %}" title="Blog Detail">Blog Detail</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -1700,7 +1694,7 @@
                                     <i class="zmdi zmdi-minus"></i>
                                     <i class="zmdi zmdi-plus"></i>
                                 </span>
-                                <a href="#" title="Page">
+                                <a href="javascript:void(0);" title="Page">
                                     <i class="fa fa-file-text-o" aria-hidden="true"></i>page</a>
                                 <div class="subCategory collapse" id="page" aria-expanded="true" role="status">
                                     <ul class="group-page">
@@ -1712,13 +1706,13 @@
                                                         <div class="menu-content">
                                                             <ul class="col">
                                                                 <li>
-                                                                    <a href="products-list.html">Product Grid (Sidebar Left)</a>
+                                                                    <a href="{% url 'products_list' %}">Product Grid (Sidebar Left)</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="product-grid-sidebar-right.html">Product Grid (Sidebar Right)</a>
+                                                                    <a href="{% url 'product_grid_sidebar_right' %}">Product Grid (Sidebar Right)</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="product-list-sidebar-left.html">Product List (Sidebar Left) </a>
+                                                                    <a href="{% url 'product_list_sidebar_left' %}">Product List (Sidebar Left) </a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -1728,10 +1722,10 @@
                                                         <div class="menu-content">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="product-detail.html">Product Detail (Sidebar Left)</a>
+                                                                    <a href="{% url 'product_detail' %}">Product Detail (Sidebar Left)</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="#">Product Detail (Sidebar Right)</a>
+                                                                    <a href="javascript:void(0);">Product Detail (Sidebar Right)</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -1741,10 +1735,10 @@
                                                         <div class="menu-content">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="404.html">404 Page</a>
+                                                                    <a href="{% url '404' %}">404 Page</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="about-us.html">About Us Page</a>
+                                                                    <a href="{% url 'about_us' %}">About Us Page</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -1756,7 +1750,7 @@
                                 </div>
                             </li>
                             <li class="item has-sub">
-                                <a href="contact.html" title="Contact us">
+                                <a href="{% url 'contact' %}" title="Contact us">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>Contact us</a>
                             </li>
                         </ul>
@@ -1778,20 +1772,19 @@
     </div>
 
     <!-- Vendor JS -->
-    <script src="libs/jquery/jquery.min.js"></script>
-    <script src="libs/popper/popper.min.js"></script>
-    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="libs/nivo-slider/js/jquery.nivo.slider.js"></script>
-    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
-    <script src="libs/slider-range/js/tmpl.js"></script>
-    <script src="libs/slider-range/js/jquery.dependClass-0.1.js"></script>
-    <script src="libs/slider-range/js/draggable-0.1.js"></script>
-    <script src="libs/slider-range/js/jquery.slider.js"></script>
+    <script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/popper/popper.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libs/nivo-slider/js/jquery.nivo.slider.js' %}"></script>
+    <script src="{% static 'libs/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'libs/slider-range/js/tmpl.js' %}"></script>
+    <script src="{% static 'libs/slider-range/js/jquery.dependClass-0.1.js' %}"></script>
+    <script src="{% static 'libs/slider-range/js/draggable-0.1.js' %}"></script>
+    <script src="{% static 'libs/slider-range/js/jquery.slider.js' %}"></script>
 
     <!-- Template JS -->
-    <script src="js/theme.js"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
 </body>
-
 
 <!-- blog-detail10:54-->
 </html>
