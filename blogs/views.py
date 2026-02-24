@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from blogs.models import Blog, BlogStatus, Category, Tag
+from blogs.models import Blog, BlogStatus, Category, Tag, Author
 
 
 def blogs_list_view(request):
@@ -9,7 +9,8 @@ def blogs_list_view(request):
         "categories": Category.objects.filter(parent=None),
         "tags": Tag.objects.all(),
         "recent_posts": Blog.objects.order_by('-created_at')[:2],
-        'authors': Blog.authors.filter(is_active=True).order_by('created_at')
+        'authors': Author.objects.filter(is_active=True).order_by('created_at')
+
     }
     return render(
         request, 'blogs/blogs-list.html',
