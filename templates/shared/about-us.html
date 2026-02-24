@@ -80,6 +80,8 @@
                                                 amet nibh vultate cursus a sit amet mauris.</p>
                                         </div>
                                     </div>
+
+
                                     <div class="col-lg-6 col-md-6 col-sm-6 left">
                                         <a href="#">
                                             <img class="img-fluid" src="{% static 'img/other/2.jpg' %}" alt="#"/>
@@ -93,61 +95,20 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 left">
                                         <div class="cms-block f-right">
                                             <h3 class="page-subheading no-before">MEET OUR TEAM</h3>
-                                            <div class="testimonials owl-carousel owl-theme owl-loaded owl-drag">
+                                            <div class="testimonials owl-carousel owl-theme">
+                                                {% for author in authors %}
                                                 <div class="item">
-                                                    <div class="name">William James</div>
-                                                    <div class="position">Designer - Stylish</div>
-                                                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
-                                                        lorem
-                                                        quis biben dum auctor, nisi elit consequat ipsum, nec sagittis
-                                                        sem
-                                                        nibh id elit. Duis sed odio sit amet nibh vultate cursus a sit
-                                                        amet
-                                                        mauris. Proin gravida nibh vel velit auctor aliquet. Aenean
-                                                        sollicudin,
-                                                        lorem quis bibendum auctor, nisi elit conse quat ipsum
-                                                    </p>
+                                                    <div class="name">{{ author.full_name }}</div>
+                                                    <div class="position">{{ author.professions }}</div>
+                                                    <p>{{ author.about }}</p>
                                                 </div>
+                                                {% empty %}
                                                 <div class="item">
-                                                    <div class="name">Seller Smith</div>
-                                                    <div class="position">Web developer</div>
-                                                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
-                                                        lorem
-                                                        quis biben dum auctor, nisi elit consequat ipsum, nec sagittis
-                                                        sem
-                                                        nibh id elit. Duis sed odio sit amet nibh vultate cursus a sit
-                                                        amet
-                                                        mauris.
-                                                    </p>
+                                                    <div class="name">No Team Members</div>
+                                                    <div class="position">Please add authors in admin</div>
+                                                    <p>Add authors through the admin panel to display team members here.</p>
                                                 </div>
-                                                <div class="item">
-                                                    <div class="name">Peter Capidal</div>
-                                                    <div class="position">Front-end Developer</div>
-                                                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
-                                                        lorem
-                                                        quis biben dum auctor, nisi elit consequat ipsum, nec sagittis
-                                                        sem
-                                                        nibh id elit. Duis sed odio sit amet nibh vultate cursus a sit
-                                                        amet
-                                                        mauris. Proin gravida nibh vel velit auctor aliquet. Aenean
-                                                        sollicudin,
-                                                        lorem quis bibendum auctor, nisi elit conse quat ipsum
-                                                    </p>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="name">David James</div>
-                                                    <div class="position">Developer</div>
-                                                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin,
-                                                        lorem
-                                                        quis biben dum auctor, nisi elit consequat ipsum, nec sagittis
-                                                        sem
-                                                        nibh id elit. Duis sed odio sit amet nibh vultate cursus a sit
-                                                        amet
-                                                        mauris.Proin gravida nibh vel velit auctor aliquet. Aenean
-                                                        sollicudin,
-                                                        lorem quis bibendum auctor, nisi elit conse quat ipsum
-                                                    </p>
-                                                </div>
+                                                {% endfor %}
                                             </div>
                                             <div class="social-content">
                                                 <div class="social">

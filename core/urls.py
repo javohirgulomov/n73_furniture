@@ -24,6 +24,7 @@ urlpatterns = [
     path('blogs/', include('blogs.urls', namespace='blogs')),
     path('products/', include('products.urls', namespace='products')),
     path('', include('shared.urls', namespace='shared')),
+    path('', include('about.urls'))
 ]
 
 if settings.DEBUG:
